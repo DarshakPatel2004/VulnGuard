@@ -1,0 +1,17 @@
+.env
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.db-journal
+node_modules/
+dist/
+build/
+.vite/
+*.egg-info/
+.pytest_cache/
+.coverage
+output_rules/
+backend/static/

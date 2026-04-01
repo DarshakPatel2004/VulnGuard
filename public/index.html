@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Master - Productivity Redefined</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <span class="logo-icon">✨</span>
+                <h1>Task Master</h1>
+            </div>
+            <div class="header-actions">
+                <button id="add-task-btn" class="btn primary">New Task</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="dashboard">
+                <div class="stats">
+                    <div class="stat-card">
+                        <span class="stat-label">Pending</span>
+                        <span id="pending-count" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Completed</span>
+                        <span id="completed-count" class="stat-value">0</span>
+                    </div>
+                </div>
+
+                <div class="task-sections">
+                    <div class="section">
+                        <h2>Pending Tasks</h2>
+                        <div id="pending-tasks" class="task-list"></div>
+                    </div>
+                    <div class="section">
+                        <h2>Completed</h2>
+                        <div id="completed-tasks" class="task-list completed"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2 id="modal-title">Add New Task</h2>
+                <form id="task-form">
+                    <input type="hidden" id="task-id">
+                    <div class="form-group">
+                        <label for="task-title">Title</label>
+                        <input type="text" id="task-title" required placeholder="What needs to be done?">
+                    </div>
+                    <div class="form-group">
+                        <label for="task-description">Description</label>
+                        <textarea id="task-description" placeholder="Add more details..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Labels</label>
+                        <div id="label-options" class="label-selector"></div>
+                    </div>
+                    <button type="submit" class="btn primary block">Save Task</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
