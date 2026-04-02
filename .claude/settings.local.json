@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(sqlite3:*)",
-      "Bash(curl -s -u admin:admin http://localhost:8000/assets/)"
-    ]
-  }
-}

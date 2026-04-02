@@ -1,6 +1,4 @@
-<div align="center">
-
-# 🛡️ Vulnerability Tracker
+# Vulnerability Tracker
 
 **A local threat intelligence platform for aggregating CVEs, managing assets, and auto-generating detection rules.**
 
@@ -261,4 +259,3 @@ The `scripts/` directory contains maintenance tools for syncing, diagnostics, da
 
 Made with 🔐 for defenders who prefer their data local.
 
-</div>
