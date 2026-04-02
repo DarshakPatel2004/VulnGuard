@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # Vulnerability Tracker
 
 Vulnerability Tracker is a local threat intelligence and rule generation app. It pulls vulnerability data from multiple sources, stores it in SQLite, exposes it through a FastAPI API, and provides a React dashboard for browsing CVEs, managing assets, and exporting detection rules.
@@ -166,3 +168,8 @@ Generated rule files are written to `output_rules/` by default, relative to the 
 
 The `scripts/` folder contains utility scripts for syncing, diagnostics, data inspection, and CPE correction work. These are useful for maintenance but are not required to run the main app.
 
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
