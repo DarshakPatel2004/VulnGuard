@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&duration=3000&pause=1000&color=00D4FF&center=true&vCenter=true&width=600&lines=%F0%9F%9B%A1%EF%B8%8F+Vulnerability+Tracker;Local+Threat+Intelligence;CVE+%7C+IoC+%7C+Detection+Rules" alt="Vulnerability Tracker" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&duration=3000&pause=1000&color=00D4FF&center=true&vCenter=true&width=600&lines=%F0%9F%9B%A1%EF%B8%8F+VulnForge;Local+Threat+Intelligence;CVE+%7C+IoC+%7C+Detection+Rules" alt="VulnForge" />
 
 <p align="center">
   <strong>A self-hosted threat intelligence platform — aggregate CVEs, manage assets, and auto-generate detection rules. Fully local. Zero cloud dependency.</strong>
@@ -157,7 +157,7 @@ flowchart TD
 ## 📁 Project Structure
 
 ```
-vulnerability-tracker/
+vulnforge/  (vulnerability-tracker/)
 │
 ├── backend/
 │   └── app/
@@ -386,7 +386,7 @@ The `scripts/` directory contains maintenance tools for manual syncing, diagnost
 
 ---
 
-**Built for blue teamers who believe their threat data belongs to them.**
+**VulnForge — built for blue teamers who believe their threat data belongs to them.**
 
 *No telemetry. No SaaS. No subscriptions. Just your data, your rules, your machine.*
 
