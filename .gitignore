@@ -1,17 +1,23 @@
-.env
-venv/
-__pycache__/
+# Backend
+backend/venv/
+backend/__pycache__/
 *.pyc
-*.pyo
-*.pyd
-*.db
-*.db-journal
-node_modules/
-dist/
-build/
-.vite/
-*.egg-info/
-.pytest_cache/
-.coverage
-output_rules/
-backend/static/
+
+# Local Database (Excluded from Git)
+vuln_tracker.db
+vuln_tracker.db-shm
+vuln_tracker.db-wal
+
+# Frontend
+frontend/node_modules/
+frontend/.next/
+frontend/dist/
+frontend/build/
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
