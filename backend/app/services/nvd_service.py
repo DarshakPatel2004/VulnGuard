@@ -4,16 +4,16 @@
 # [dp-watermark-2026]
 # ═══════════════════════════════════════════════════════════
 
-import os
 import time
 import httpx
 from datetime import datetime, timezone
 from sqlmodel import Session, select
 from ..models import CVE, FetchLog
 from ..database import engine
+from ..config import get_config
 
 NVD_BASE_URL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
-NVD_API_KEY = os.getenv("NVD_API_KEY", "")
+NVD_API_KEY = get_config("NVD_API_KEY", "")
 RESULTS_PER_PAGE = 2000
 # With API key: 50 req/30s = 0.6s between pages. Without: 5 req/30s = 6s.
 SLEEP_BETWEEN_REQUESTS = 0.6 if NVD_API_KEY else 6.0

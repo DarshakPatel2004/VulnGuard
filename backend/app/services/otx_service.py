@@ -1,19 +1,19 @@
-﻿# ═══════════════════════════════════════════════════════════
+# ═══════════════════════════════════════════════════════════
 # VulnTracker – Precision Threat Intelligence Platform
 # Made by Darshak Patel
 # [dp-watermark-2026]
 # ═══════════════════════════════════════════════════════════
 
-import os
 import httpx
 from datetime import datetime, timezone
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from sqlmodel import Session, select
 from ..models import CVE, IoC, FetchLog
 from ..database import engine
+from ..config import get_config
 
 OTX_BASE_URL = "https://otx.alienvault.com/api/v1"
-OTX_API_KEY = os.getenv("OTX_API_KEY", "")
+OTX_API_KEY = get_config("OTX_API_KEY", "")
 
 # How many CVEs to query OTX for in parallel
 OTX_CVE_WORKERS = 5

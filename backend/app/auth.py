@@ -1,4 +1,4 @@
-﻿# ═══════════════════════════════════════════════════════════
+# ═══════════════════════════════════════════════════════════
 # VulnTracker – Precision Threat Intelligence Platform
 # Made by Darshak Patel
 # [dp-watermark-2026]
@@ -8,14 +8,12 @@ import os
 import secrets
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
-from dotenv import load_dotenv
-
-load_dotenv()
+from .config import get_config
 
 security = HTTPBasic()
 
-BASIC_AUTH_USERNAME = os.getenv("BASIC_AUTH_USERNAME", "admin")
-BASIC_AUTH_PASSWORD = os.getenv("BASIC_AUTH_PASSWORD", "changeme")
+BASIC_AUTH_USERNAME = get_config("BASIC_AUTH_USERNAME", "admin")
+BASIC_AUTH_PASSWORD = get_config("BASIC_AUTH_PASSWORD", "changeme")
 
 
 def verify_credentials(credentials: HTTPBasicCredentials = Depends(security)):

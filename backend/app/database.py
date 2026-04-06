@@ -1,13 +1,13 @@
-﻿# ═══════════════════════════════════════════════════════════
+# ═══════════════════════════════════════════════════════════
 # VulnTracker – Precision Threat Intelligence Platform
 # Made by Darshak Patel
 # [dp-watermark-2026]
 # ═══════════════════════════════════════════════════════════
 
-import os
 from sqlmodel import SQLModel, create_engine, Session
+from .config import get_config
 
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./vuln_tracker.db")
+DATABASE_URL = get_config("DATABASE_URL", "sqlite:///./vuln_tracker.db")
 
 from sqlalchemy import event
 

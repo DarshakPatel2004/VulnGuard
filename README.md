@@ -180,29 +180,23 @@ vulnforge/  (vulnerability-tracker/)
 
 ## 🔑 Environment Setup
 
-Create a `.env` file at the **project root**:
-
-```env
-# ─── Data Sources ──────────────────────────────────────────────────────
-NVD_API_KEY=your_nvd_api_key          # Strongly recommended for higher rate limits
-OTX_API_KEY=your_otx_api_key          # Required for OTX enrichment & rule coverage
-
-# ─── Auth ──────────────────────────────────────────────────────────────
-BASIC_AUTH_USERNAME=admin
-BASIC_AUTH_PASSWORD=changeme           # ⚠️  Change this!
-
-# ─── Database ──────────────────────────────────────────────────────────
-DATABASE_URL=sqlite:///./vuln_tracker.db   # Defaults to this if omitted
-
-# ─── Server ────────────────────────────────────────────────────────────
-APP_HOST=0.0.0.0
-APP_PORT=8000
-DEBUG=true
-```
+1. **Copy the template**:
+   ```bash
+   cp .env.example .env
+   ```
+2. **Configure your keys**: Open `.env` and add your plain-text API keys. 
 
 > [!TIP]
-> Get a free NVD API key at [nvd.nist.gov/developers/request-an-api-key](https://nvd.nist.gov/developers/request-an-api-key).  
-> Without a key, NVD rate-limits you to **5 requests per 30 seconds**.
+> **Automatic Obfuscation**: The project features a built-in security layer. The first time you start the backend, it will automatically detect any plain-text keys in your `.env` file and encode them to Base64 (prefixed with `b64:`) to prevent accidental "over-the-shoulder" exposure.
+
+### Obtaining API Keys
+
+| Source | How to Get a Key | Benefit |
+|:---:|---|---|
+| **NVD (NIST)** | [Request at nvd.nist.gov](https://nvd.nist.gov/developers/request-an-api-key) | Increases rate limits (50 req/30s vs 5 req/30s) |
+| **AlienVault OTX** | [Sign up at otx.alienvault.com](https://otx.alienvault.com/) | **Required** for IoC enrichment and threat intelligence pulse data |
+
+---
 
 ---
 

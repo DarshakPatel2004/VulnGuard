@@ -1,4 +1,4 @@
-﻿# ═══════════════════════════════════════════════════════════
+# ═══════════════════════════════════════════════════════════
 # VulnTracker – Precision Threat Intelligence Platform
 # Made by Darshak Patel
 # [dp-watermark-2026]
@@ -11,8 +11,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pathlib import Path
 from dotenv import load_dotenv
-
+from .config import auto_obfuscate
 load_dotenv()
+
+# Automatically encode keys on startup if they are in plain-text
+auto_obfuscate()
 
 from .database import create_db_and_tables
 from .scheduler import start_scheduler, stop_scheduler

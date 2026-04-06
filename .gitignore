@@ -1,22 +1,31 @@
-# Backend
-backend/venv/
-backend/__pycache__/
-*.pyc
+# Environments
+.env
+.env.local
+.env.*
+!.env.example
 
-# Local Database (Excluded from Git)
-vuln_tracker.db
-vuln_tracker.db-shm
-vuln_tracker.db-wal
+# Virtual Environments
+venv/
+.venv/
+env/
+backend/venv/
+
+# Databases
+*.db
+*.db-shm
+*.db-wal
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 
 # Frontend
 frontend/node_modules/
 frontend/.next/
 frontend/dist/
 frontend/build/
-
-# Environment
-.env
-.env.local
 
 # OS
 .DS_Store
