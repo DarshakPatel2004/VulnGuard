@@ -49,7 +49,7 @@ def generate_snort_rules() -> str:
 
     lines = [
         f"# ═══════════════════════════════════════════════════════════",
-        f"# VulnTracker – Precision Threat Intelligence Platform",
+        f"# VulnForge – Precision Threat Intelligence Platform",
         f"# Made by Darshak Patel",
         f"# [dp-watermark-2026]",
         f"# ═══════════════════════════════════════════════════════════",
@@ -137,7 +137,7 @@ def generate_sigma_rules() -> str:
 
     full_content = (
         f"# ═══════════════════════════════════════════════════════════\n"
-        f"# VulnTracker – Precision Threat Intelligence Platform\n"
+        f"# VulnForge – Precision Threat Intelligence Platform\n"
         f"# Made by Darshak Patel\n"
         f"# [dp-watermark-2026]\n"
         f"# ═══════════════════════════════════════════════════════════\n"
@@ -184,7 +184,7 @@ def generate_json_alerts() -> str:
 
     content_dict = {
         "metadata": {
-            "title": "VulnTracker Alert Feed",
+            "title": "VulnForge Alert Feed",
             "made_by": "Darshak Patel",
             "watermark": "[dp-watermark-2026]",
             "generated_at": datetime.now(timezone.utc).isoformat(),

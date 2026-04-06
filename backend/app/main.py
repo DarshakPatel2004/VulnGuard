@@ -1,5 +1,5 @@
 # ═══════════════════════════════════════════════════════════
-# VulnTracker – Precision Threat Intelligence Platform
+# VulnForge – Precision Threat Intelligence Platform
 # Made by Darshak Patel
 # [dp-watermark-2026]
 # ═══════════════════════════════════════════════════════════
@@ -35,7 +35,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="Vulnerability Tracker & Rule Generator",
+    title="VulnForge – Precision Threat Intelligence",
     description=(
         "Fetches CVE data from NVD, CISA KEV, and AlienVault OTX. "
         "Generates Snort/Suricata, Sigma, and JSON security rules automatically."
@@ -64,7 +64,7 @@ app.include_router(assets.router)
 def health_check():
     return {
         "status": "running",
-        "service": "Vulnerability Tracker & Rule Generator",
+        "service": "VulnForge",
         "docs": "/docs",
     }
 

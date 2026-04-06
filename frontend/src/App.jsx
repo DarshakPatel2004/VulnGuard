@@ -1,5 +1,5 @@
 /*
-   VulnTracker - Precision Threat Intelligence Platform
+   VulnForge - Precision Threat Intelligence Platform
    Made by Darshak Patel
    [dp-watermark-2026]
 */
@@ -113,7 +113,7 @@ export default function App() {
         <aside className="sidebar">
           <div className="sidebar-brand-block">
             <div className="eyebrow">Security operations</div>
-            <div className="brand-title">VulnTracker</div>
+            <div className="brand-title">VulnForge</div>
             <p className="brand-copy">Threat visibility, asset coverage, and rule generation in one local workspace.</p>
           </div>
 
@@ -156,7 +156,7 @@ export default function App() {
 
           <div className="sidebar-footer">
             <div className="brand-copyright">Made by Darshak Patel</div>
-            <div className="app-version">VulnTracker v1.0.0</div>
+            <div className="app-version">VulnForge v1.0.0</div>
           </div>
         </aside>
 

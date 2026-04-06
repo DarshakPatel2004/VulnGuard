@@ -1,5 +1,5 @@
 /*
-   VulnTracker - Precision Threat Intelligence Platform
+   VulnForge - Precision Threat Intelligence Platform
    Made by Darshak Patel
    [dp-watermark-2026]
 */
@@ -55,7 +55,7 @@ export default function Login({ onLogin }) {
 
         <div className="login-box">
           <div className="login-kicker">Secure access</div>
-          <h2>Sign in to VulnTracker</h2>
+          <h2>Sign in to VulnForge</h2>
           <p className="login-sub">Use the credentials configured in your local environment to enter the workspace.</p>
 
           <form onSubmit={handleSubmit}>

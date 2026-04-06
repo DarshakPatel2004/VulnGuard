@@ -1,4 +1,4 @@
-# 🚀 How to Run VulnTracker
+# 🚀 How to Run VulnForge
 
 Follow these steps in order the first time. After setup, only Steps 4 and 5 are needed on every subsequent run.
 
