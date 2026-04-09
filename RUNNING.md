@@ -26,7 +26,7 @@ After installing, **close and reopen PowerShell** so PATH updates take effect.
 
 ### Step 2 — Configure `.env`
 
-Open `d:\sideproject\vulnerability-tracker\.env` and fill in:
+Open `.env` and fill in:
 
 ```env
 NVD_API_KEY=your_nvd_key_here
@@ -43,7 +43,7 @@ DEBUG=true
 
 ### Step 3 — Create Python Virtual Environment
 
-Open PowerShell in `d:\sideproject\vulnerability-tracker`:
+Open PowerShell in the `VulnForge` directory:
 
 ```powershell
 python -m venv venv
@@ -71,7 +71,7 @@ You need **two separate PowerShell windows** open at the same time.
 ### Terminal 1 — Start the Back-end
 
 ```powershell
-cd d:\sideproject\vulnerability-tracker
+cd VulnForge
 .\venv\Scripts\python -m uvicorn backend.app.main:app --reload --port 8000
 ```
 
@@ -88,7 +88,7 @@ INFO:     Uvicorn running on http://0.0.0.0:8000
 ### Terminal 2 — Start the Front-end
 
 ```powershell
-cd d:\sideproject\vulnerability-tracker\frontend
+cd VulnForge\frontend
 npm run dev
 ```
 
@@ -148,7 +148,7 @@ All endpoints require Basic Auth (username/password from `.env`).
 After a sync completes, rule files are written to:
 
 ```
-d:\sideproject\vulnerability-tracker\output_rules\
+VulnForge\output_rules\
     snort.rules     ← Snort / Suricata network block rules
     sigma.yml       ← Sigma SIEM detection rules
     alerts.json     ← Generic JSON alert feed

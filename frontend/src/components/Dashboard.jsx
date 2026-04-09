@@ -120,6 +120,7 @@ export default function Dashboard({ onToast, onStatusRefresh }) {
         labels: ['Critical', 'High', 'Medium', 'Low', 'KEV'],
         datasets: [
           {
+            label: 'Count',
             data: [stats.critical, stats.high, stats.medium, stats.low, stats.kev_count],
             backgroundColor: ['#ef4444', '#f59e0b', '#10b981', '#3b82f6', '#fbbf24'],
             borderRadius: 6,
@@ -133,6 +134,7 @@ export default function Dashboard({ onToast, onStatusRefresh }) {
     maintainAspectRatio: false,
     plugins: {
       legend: {
+        display: true,
         labels: {
           color: '#9ca3af',
           font: { family: 'Inter', size: 12 },
@@ -148,6 +150,16 @@ export default function Dashboard({ onToast, onStatusRefresh }) {
       y: {
         ticks: { color: '#6b7280', font: { family: 'JetBrains Mono', size: 11 } },
         grid: { color: 'rgba(255, 255, 255, 0.08)' },
+      },
+    },
+  };
+
+  const barOptions = {
+    ...chartOptions,
+    plugins: {
+      ...chartOptions.plugins,
+      legend: {
+        display: false, // Hide legend for Bar chart specifically
       },
     },
   };
@@ -191,7 +203,7 @@ export default function Dashboard({ onToast, onStatusRefresh }) {
               {doughnutData ? <Doughnut data={doughnutData} options={chartOptions} /> : null}
             </div>
             <div className="chart-container">
-              {barData ? <Bar data={barData} options={chartOptions} /> : null}
+              {barData ? <Bar data={barData} options={barOptions} /> : null}
             </div>
           </div>
         </div>

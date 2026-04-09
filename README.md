@@ -47,7 +47,7 @@
 
 ```powershell
 # 1. Clone and enter the project
-cd D:\sideproject\vulnerability-tracker
+cd VulnForge
 
 # 2. Set up the backend
 python -m venv venv
@@ -182,7 +182,7 @@ flowchart TD
 ## 📁 Project Structure
 
 ```
-vulnforge/  (vulnerability-tracker/)
+vulnforge/
 │
 ├── backend/
 │   └── app/
@@ -250,7 +250,7 @@ To get started, create a `.env` file in the project root (you can use `.env.exam
 <br>
 
 ```powershell
-cd D:\sideproject\vulnerability-tracker
+cd VulnForge
 python -m venv venv
 .\venv\Scripts\pip install -r requirements.txt
 ```
@@ -262,7 +262,7 @@ python -m venv venv
 <br>
 
 ```powershell
-cd D:\sideproject\vulnerability-tracker\frontend
+cd VulnForge\frontend
 npm install
 ```
 
@@ -275,14 +275,14 @@ npm install
 **Terminal 1 — Backend API**
 
 ```powershell
-cd D:\sideproject\vulnerability-tracker
+cd VulnForge
 .\venv\Scripts\python -m uvicorn backend.app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 **Terminal 2 — Frontend Dev Server**
 
 ```powershell
-cd D:\sideproject\vulnerability-tracker\frontend
+cd VulnForge\frontend
 npm run dev
 ```
 
