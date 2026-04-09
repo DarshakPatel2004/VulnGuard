@@ -56,9 +56,12 @@ python -m venv venv
 # 3. Set up the frontend
 cd frontend && npm install && cd ..
 
-# 4. Start both servers (two separate terminals)
+# 4. Start the backend
 .\venv\Scripts\python -m uvicorn backend.app.main:app --reload --host 0.0.0.0 --port 8000
-# (new terminal) cd frontend && npm run dev
+
+# 5. Start the frontend (in a new terminal)
+cd frontend
+npm run dev
 ```
 
 | 🖥️ Dashboard | ⚡ REST API | 📖 Swagger UI |
