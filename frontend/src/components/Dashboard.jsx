@@ -12,12 +12,11 @@ import {
   Legend,
   CategoryScale,
   LinearScale,
-  BarElement,
 } from 'chart.js';
-import { Doughnut, Bar } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import { api } from '../api.js';
 
-ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement);
+ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale);
 
 const CHART_COLORS = {
   CRITICAL: '#ef4444',
@@ -115,19 +114,6 @@ export default function Dashboard({ onToast, onStatusRefresh }) {
       }
     : null;
 
-  const barData = stats
-    ? {
-        labels: ['Critical', 'High', 'Medium', 'Low', 'KEV'],
-        datasets: [
-          {
-            label: 'Count',
-            data: [stats.critical, stats.high, stats.medium, stats.low, stats.kev_count],
-            backgroundColor: ['#ef4444', '#f59e0b', '#10b981', '#3b82f6', '#fbbf24'],
-            borderRadius: 6,
-          },
-        ],
-      }
-    : null;
 
   const chartOptions = {
     responsive: true,
@@ -154,15 +140,6 @@ export default function Dashboard({ onToast, onStatusRefresh }) {
     },
   };
 
-  const barOptions = {
-    ...chartOptions,
-    plugins: {
-      ...chartOptions.plugins,
-      legend: {
-        display: false, // Hide legend for Bar chart specifically
-      },
-    },
-  };
 
   if (loading) return <div className="spinner" />;
 
@@ -188,8 +165,16 @@ export default function Dashboard({ onToast, onStatusRefresh }) {
         <StatCard label="Total CVEs" value={stats?.total_cves} detail="Current database count" icon="📊" />
         <StatCard label="Critical" value={stats?.critical} tone="critical" detail="Immediate action" icon="🔥" />
         <StatCard label="High" value={stats?.high} tone="high" detail="Needs prioritization" icon="⚠️" />
-        <StatCard label="CISA KEV" value={stats?.kev_count} tone="kev" detail="Exploited vulns" icon="🎯" />
-        <StatCard label="IoCs" value={stats?.total_iocs} tone="ioc" detail="Available indicators" icon="⚡" />
+        <StatCard label="Medium" value={stats?.medium} tone="medium" detail="Moderate risk" icon="🛡️" />
+        <StatCard label="Low" value={stats?.low} tone="low" detail="Minor risk" icon="✅" />
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '20px' }}>
+        <div style={{ flex: '0 0 calc(20% - 16px)' }}>
+          <StatCard label="CISA KEV" value={stats?.kev_count} tone="kev" detail="Exploited vulns" icon="🎯" />
+        </div>
+        <div style={{ flex: '0 0 calc(20% - 16px)' }}>
+          <StatCard label="IoCs" value={stats?.total_iocs} tone="ioc" detail="Available indicators" icon="⚡" />
+        </div>
       </div>
 
       <div className="dashboard-grid">
@@ -198,12 +183,9 @@ export default function Dashboard({ onToast, onStatusRefresh }) {
             <h2>Severity mix</h2>
             <p className="section-note">A quick read on where exposure is clustering right now.</p>
           </div>
-          <div className="card-body chart-body split-chart">
-            <div className="chart-container">
+          <div className="card-body chart-body">
+            <div className="chart-container" style={{ width: '100%', height: '360px', margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
               {doughnutData ? <Doughnut data={doughnutData} options={chartOptions} /> : null}
-            </div>
-            <div className="chart-container">
-              {barData ? <Bar data={barData} options={barOptions} /> : null}
             </div>
           </div>
         </div>
